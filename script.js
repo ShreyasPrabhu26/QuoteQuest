@@ -5,19 +5,8 @@ const quoteText = document.getElementById('quote');
 const quoteAuthor = document.getElementById('author');
 const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
+const loader = document.getElementById("loader");
 
-function newQuote() {
-    //Get the Quote Data
-    const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
-    const author = quote?.author ?? "Unknown";
-
-    //Check if Quote Lenght is large and change the style
-    (quote.text.length > 50) ? quoteText.classList.add("long-quote") : quoteText.classList.remove("long-quote")
-
-    //Set Dom Fields
-    quoteAuthor.textContent = author;
-    quoteText.textContent = quote.text;
-}
 
 //Tweet Quote
 function tweetQuote() {
@@ -42,6 +31,35 @@ async function getQuotes() {
     catch (error) {
         console.log(error);
     }
+}
+
+function newQuote() {
+    loading();
+    //Get the Quote Data
+    const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
+    const author = quote?.author ?? "Unknown";
+
+    //Check if Quote Lenght is large and change the style
+    (quote.text.length > 50) ? quoteText.classList.add("long-quote") : quoteText.classList.remove("long-quote")
+
+    //Set Dom Fields
+    quoteAuthor.textContent = author;
+    quoteText.textContent = quote.text;
+    complete();
+}
+
+//Show Loading
+function loading() {
+    loader.hidden = false;
+    quoteContainer.hidden = true;
+    loader.classList.remove("hide-element")
+}
+
+//Hide Loading
+function complete() {
+    loader.hidden = true;
+    loader.classList.add("hide-element")
+    quoteContainer.hidden = false;
 }
 
 //Event Listner
