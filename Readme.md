@@ -1,4 +1,4 @@
-#QuoteQuest - Unleash Inspiration 📜
+## QuoteQuest - Unleash Inspiration 📜
 
 ![QuoteQuest Logo](favicon.png)
 
