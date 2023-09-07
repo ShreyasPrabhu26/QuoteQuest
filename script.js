@@ -44,15 +44,13 @@ function newQuote() {
 }
 
 function showLoadingSpin() {
-    loader.hidden = false;
-    quoteContainer.hidden = true;
-    loader.classList.remove("hide-element")
+    quoteContainer.classList.add("hide-element");
+    loader.classList.remove("hide-element");
 }
 
 function removeLoadingSpin() {
-    loader.hidden = true;
-    quoteContainer.hidden = false;
-    loader.classList.add("hide-element")
+    quoteContainer.classList.remove("hide-element");
+    loader.classList.add("hide-element");
 }
 
 //Tweet Quote
