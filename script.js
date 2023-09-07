@@ -19,6 +19,16 @@ function newQuote() {
     quoteText.textContent = quote.text;
 }
 
+//Tweet Quote
+function tweetQuote() {
+    const twitterUrl = `https://twitter.com/intent/tweet?text="${quoteText.textContent}" - ${quoteAuthor.textContent}`;
+
+    //Opens new tab with tweet Component
+    window.open(twitterUrl, '_blank');
+}
+
+
+//Fetching Quotes Data
 let apiQuotes = [];
 let attitudeQuotes = [];
 async function getQuotes() {
@@ -34,4 +44,9 @@ async function getQuotes() {
     }
 }
 
+//Event Listner
+newQuoteBtn.addEventListener("click", newQuote);
+twitterBtn.addEventListener("click", tweetQuote);
+
+//On Load
 getQuotes();
