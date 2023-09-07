@@ -27,7 +27,6 @@ body {
 }
 
 .quote-container {
-  border: 1px solid red;
   width: auto;
   max-width: 900px;
   padding: 20px 30px;
