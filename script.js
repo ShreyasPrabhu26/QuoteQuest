@@ -7,14 +7,9 @@ const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
 const loader = document.getElementById("loader");
 
-
-//Tweet Quote
-function tweetQuote() {
-    const twitterUrl = `https://twitter.com/intent/tweet?text="${quoteText.textContent}" - ${quoteAuthor.textContent}`;
-
-    //Opens new tab with tweet Component
-    window.open(twitterUrl, '_blank');
-}
+//Event Listner
+newQuoteBtn.addEventListener("click", newQuote);
+twitterBtn.addEventListener("click", tweetQuote);
 
 
 //Fetching Quotes Data
@@ -34,7 +29,7 @@ async function getQuotes() {
 }
 
 function newQuote() {
-    loading();
+    showLoadingSpin();
     //Get the Quote Data
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
     const author = quote?.author ?? "Unknown";
@@ -45,26 +40,28 @@ function newQuote() {
     //Set Dom Fields
     quoteAuthor.textContent = author;
     quoteText.textContent = quote.text;
-    complete();
+    removeLoadingSpin();
 }
 
-//Show Loading
-function loading() {
+function showLoadingSpin() {
     loader.hidden = false;
     quoteContainer.hidden = true;
     loader.classList.remove("hide-element")
 }
 
-//Hide Loading
-function complete() {
+function removeLoadingSpin() {
     loader.hidden = true;
-    loader.classList.add("hide-element")
     quoteContainer.hidden = false;
+    loader.classList.add("hide-element")
 }
 
-//Event Listner
-newQuoteBtn.addEventListener("click", newQuote);
-twitterBtn.addEventListener("click", tweetQuote);
+//Tweet Quote
+function tweetQuote() {
+    const twitterUrl = `https://twitter.com/intent/tweet?text="${quoteText.textContent}" - ${quoteAuthor.textContent}`;
+
+    //Opens new tab with tweet Component
+    window.open(twitterUrl, '_blank');
+}
 
 //On Load
 getQuotes();
