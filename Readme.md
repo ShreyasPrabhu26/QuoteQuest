@@ -1,4 +1,4 @@
-#QuoteQuest - Unleash Inspiration 📜
+## QuoteQuest - Unleash Inspiration 📜
 
 ![QuoteQuest Logo](favicon.png)
 
@@ -14,7 +14,7 @@ QuoteQuill is an innovative web application designed to bring daily inspiration 
 
 ## How to Use 🚀
 
-1. Visit the https://quotequests.netlify.app/ (insert the live website link).
+1. Visit the https://quotequests.netlify.app
 
 2. Click the "New Quote" button to fetch a new inspiring quote.
 
