@@ -1,6 +1,5 @@
 ## QuoteQuest - Unleash Inspiration 📜
 
-![QuoteQuest Logo](favicon.png)
 
 QuoteQuill is an innovative web application designed to bring daily inspiration and wisdom to users with the simplicity of a click. In a fast-paced world, finding moments of motivation and reflection can be a challenge.QuoteQuest solves this by curating a vast collection of profound quotes and delivering them directly to your screen.
 
